@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuentas Bancarias</title>
+  <link rel="stylesheet" href="Cuentas.css">
+</head>
+<body>
+  <div class="inicio">
+    
+    <div class="perfil">
+        <a href="perfil.html">Perfil</a>
+    </div>
+
+    <nav class="naveg">
+        <a href="index.html">Inicio</a>
+        <a href="Pagos.html">Pagos <br>En Linea</a>
+        <a href="Nosotros.html">Sobre <br>Nosotros</a>
+        <a href="Login.html">Cerrar<br>Sesion</a>
+    </nav>
+  </div>
+  <br><br><br><br>
+
+  <div class="content sau">
+    <h1 class="title">Cuentas Bancarias </h1>
+    <form id="accountForm">
+      <input type="text" placeholder="Nombre de la cuenta" id="accountName">
+      <input type="text" placeholder="Nombre del titular" id="accountHolder">
+      <input type="number" placeholder="Saldo inicial" id="initialBalance">
+      <select id="accountType">
+        <option value="corriente">Cuenta corriente</option>
+        <option value="ahorros">Cuenta de ahorros</option>
+      </select>
+      <button type="button" onclick="createAccount()">Crear cuenta</button>
+    </form>
+    <div id="accountList">
+    </div>
+  </div>
+
+  <script>
+    // JavaScript
+    let accounts = [];
+
+    function createAccount() {
+      const accountName = document.getElementById('accountName').value.trim();
+      const accountHolder = document.getElementById('accountHolder').value.trim();
+      const initialBalance = parseFloat(document.getElementById('initialBalance').value);
+      const accountType = document.getElementById('accountType').value;
+
+      if (accountName === '' || accountHolder === '' || isNaN(initialBalance) || initialBalance <= 0) {
+        alert('Por favor, completa todos los campos correctamente.');
+        return;
+      }
+
+      if (isAccountNameDuplicate(accountName)) {
+        alert('Esta cuenta ya existe, cambien el nombre de cuenta.');
+        return;
+      }
+
+      const account = {
+        name: accountName,
+        accountHolder,
+        balance: initialBalance,
+        type: accountType
+      };
+
+      accounts.push(account);
+      updateAccountList();
+    }
+
+    function isAccountNameDuplicate(name) {
+      return accounts.some(account => account.name === name);
+    }
+
+    function updateAccountList() {
+      const accountListDiv = document.getElementById('accountList');
+      accountListDiv.innerHTML = '';
+
+      accounts.forEach((account, index) => {
+        const accountDiv = document.createElement('div');
+        accountDiv.className = `account ${account.type}`;
+        accountDiv.innerHTML = `
+          <div><span>Cuenta ${index + 1}: ${account.name}</span></div>
+          <div>Titular: ${account.accountHolder}</div>
+          <div>Tipo de cuenta: ${account.type}</div>
+          <div>Saldo: $${account.balance.toFixed(2)}</div>
+        `;
+        accountListDiv.appendChild(accountDiv);
+      });
+    }
+  </script>
+</body>
+</html>
+

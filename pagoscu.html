@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pagoscu.css">
+  <title>Pagos en Línea</title>
+</head>
+
+<body>
+  <div class="inicio">
+    <div class="perfil">
+        <a href="perfil.html">Perfil</a>
+    </div>
+
+    <nav class="naveg">
+        <a href="index.html">Inicio</a>
+        <a href="Cuentas.html">Cuentas  <br>Bancarias</a>
+        <a href="Nosotros.html">Sobre <br>Nosotros</a>
+        <a href="Login.html"> Cerrar<br>Sesion</a>
+    </nav>
+  </div>
+
+  <div class="formulario">
+    <div class="contenedor">
+      <h1>Pagos en Línea</h1>
+      <form id="paymentForm">
+        <div class="input-contenedor">
+          <i class="icon">Número de cuenta:</i>
+          <input type="text" id="accountNumber" minlength="10" maxlength="10" required>
+        </div>
+        <div class="input-contenedor">
+          <i class="icon">Nombre del titular:</i>
+          <input type="text" id="accountHolderName" pattern="[A-Za-zÁ-Úá-ú\s]+" required>
+        </div>
+        <div class="input-contenedor">
+          <i class="icon">Tipo de cuenta:</i>
+          <select id="accountType" required>
+            <option value="">Seleccione...</option>
+            <option value="Corriente">Corriente</option>
+            <option value="Ahorros">Ahorros</option>
+          </select>
+        </div>
+        <button type="submit" class="button">Realizar Pago</button>
+      </form>
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <div class="resumen-pago" id="resumenPago">
+    <h2>Resumen del Pago</h2>
+    <p><strong>Número de cuenta:</strong> <span id="resumenCuenta"></span></p>
+    <p><strong>Nombre del titular:</strong> <span id="resumenTitular"></span></p>
+    <p><strong>Tipo de cuenta:</strong> <span id="resumenTipoCuenta"></span></p>
+    <p><strong>Dinero disponible:</strong> $<span id="resumenCantidad"></span></p>
+    <br>
+    <h2>Elige el servicio a pagar:</h2>
+    <p>
+      <button onclick="redireccionar('Agua potable', 10)">Agua potable - $10</button>
+      <button onclick="redireccionar('Luz', 15)">Luz - $15</button>
+      <button onclick="redireccionar('Internet', 18)">Internet - $18</button>
+    </p>
+  </div>
+
+  <div class="confirmacion-pago" id="confirmacionPago">
+    <h2>Confirmar Compra</h2>
+    <p>¿Estás seguro de que deseas realizar esta compra?</p>
+    <button onclick="compraRealizada()">Confirmar</button>
+    <button onclick="cancelarCompra()">Cancelar</button>
+  </div>
+
+  <script>
+    document.getElementById('paymentForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const accountNumber = document.getElementById('accountNumber').value;
+      const accountHolderName = document.getElementById('accountHolderName').value;
+      const accountType = document.getElementById('accountType').value;
+
+      if (!/^\d{10}$/.test(accountNumber)) {
+        alert('El número de cuenta debe contener exactamente 10 números.');
+        return;
+      }
+
+      if (!/^[A-ZÁ-Úa-zá-ú\s]+$/.test(accountHolderName)) {
+        alert('Por favor, ingrese un nombre de titular válido con la primera letra en mayúscula.');
+        return;
+      }
+
+      if (accountType === '') {
+        alert('Por favor, seleccione el tipo de cuenta.');
+        return;
+      }
+
+      const resumenCantidad = Math.floor(Math.random() * 75) + 26;
+
+      document.getElementById('resumenCuenta').textContent = accountNumber;
+      document.getElementById('resumenTitular').textContent = accountHolderName;
+      document.getElementById('resumenTipoCuenta').textContent = accountType;
+      document.getElementById('resumenCantidad').textContent = resumenCantidad;
+
+      document.getElementById('resumenPago').style.display = 'block'; 
+    });
+
+  
+    function redireccionar(servicio, costo) {
+      document.getElementById('confirmacionPago').style.display = 'block'; 
+      document.getElementById('confirmacionPago').setAttribute('data-servicio', servicio);
+      document.getElementById('confirmacionPago').setAttribute('data-costo', costo);
+    }
+    function compraRealizada() {
+      const servicio = document.getElementById('confirmacionPago').getAttribute('data-servicio');
+      const costo = parseInt(document.getElementById('confirmacionPago').getAttribute('data-costo'));
+      const resumenCantidad = parseInt(document.getElementById('resumenCantidad').textContent);
+      const saldoActual = resumenCantidad - costo;
+      const mensaje = `Compra de ${servicio} realizada correctamente.\nSaldo actual: $${saldoActual} USD.`;
+
+      const mensajeConfirmacion = document.createElement('p');
+      mensajeConfirmacion.textContent = mensaje;
+      document.getElementById('confirmacionPago').appendChild(mensajeConfirmacion);
+    }
+    function cancelarCompra() {
+      document.getElementById('confirmacionPago').style.display = 'none'; // Ocultar el cuadro de confirmación
+    }
+  </script>
+</body>
+
+</html>

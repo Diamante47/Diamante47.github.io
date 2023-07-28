@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pagoscu.css">
+  <title>Pagos en Línea</title>
+
+  <style>
+    
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: linear-gradient(150deg, #43a8f0, #6d31cd);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.contenedor {
+  width: 100%;
+  padding: 15px;
+}
+
+.formulario {
+  background: #fff;
+  margin-top: 100px;
+  padding: 3px;
+}
+
+h1 {
+  text-align: center;
+  color: #6d31cd;
+  font-size: 40px;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  font-size: 20px;
+  width: 82%;
+  padding: 10px;
+  border: none;
+}
+
+.input-contenedor {
+  margin-bottom: 15px;
+  border: 1px solid;
+}
+
+.icon {
+  min-width: 50px;
+  text-align: center;
+  color: #6d31cd;
+}
+
+.button {
+  border: none;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  background: #43a8f0;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #6d31cd;
+}
+
+p {
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #43a8f0;
+  font-weight: 600;
+}
+
+.link:hover {
+  color: cadetblue;
+}
+
+@media(min-width:768px) {
+  .formulario {
+    margin: auto;
+    width: 500px;
+    margin-top: 100px;
+    border-radius: 2%;
+  }
+}
+
+i {
+  color: #43a8f0;
+}
+
+.Titu {
+  background-color: #6d31cd;
+  color: silver;
+  margin: auto;
+  padding: 15px 20px;
+}
+
+/* Estilos del menú de navegación */
+.inicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 63px;
+  background: #171717;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.naveg {
+  display: flex;
+  margin-right: 10px;
+}
+
+.perfil {
+  margin-left: 30px;
+}
+
+.perfil a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.naveg a {
+  display: block;
+  padding: 20px 20px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.naveg a:hover {
+  background: #3f3f3f;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  height: 60vh !important;
+  background: url(img/morado.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.title {
+  margin-bottom: 40px;
+  font-size: 60px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+p {
+  margin-bottom: 40px;
+  font-size: 18px;
+  color: #fff;
+  padding: 0 100px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 40px;
+  border: 2px solid #9c27b0;
+  color: #fff;
+  text-decoration: none;
+  background: #9c27b0;
+}
+
+.btn:hover {
+  background: none;
+}
+
+.btn-home {
+  display: flex;
+}
+
+.btn-home a {
+  margin: 0 10px;
+}
+
+.content {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sau {
+  padding: 30px;
+  background: silver;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.box-container .box {
+  height: 11rem;
+  width: 17rem;
+  background: #101010;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0 .3rem 5rem rgba(0, 0 , 0, .5);
+  margin: 2rem;
+}
+
+.box-container .box i {
+  height: 3rem;
+  width: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #9c27b0;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.box-container .box h3 {
+  font-size: 20px;
+  color: #9c27b0;
+}
+
+.box-container .box p {
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+.about {
+  background: purple;
+}
+
+.price {
+  background: url(img/costos.jpg) no-repeat center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.contact {
+  padding-top: 20px;
+  background: #171717;
+  padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+
+  .title {
+    margin-bottom: 0;
+    font-size: 40px;
+  }
+
+  .sau {
+    height: 100vh;
+  }
+
+  .naveg {
+    display: none;
+  }
+}
+
+.Text {
+  color: #9c27b0;
+  font-size: 35px;
+}
+
+/* Estilos para el recuadro de los menús */
+.menu-recuadro {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los botones de los servicios */
+.menu-recuadro button {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 20px;
+  border: none;
+  background: #43a8f0;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.menu-recuadro button:hover {
+  background: #6d31cd;
+}
+
+.resumen-pago {
+  display: none;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: silver;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.resumen-pago h2 {
+  color: #6d31cd;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.resumen-pago p {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.resumen-pago button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  background: #43a8f0;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.resumen-pago button:hover {
+  background: #6d31cd;
+}
+
+.confirmacion-pago {
+  display: none;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background: silver;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.confirmacion-pago h2 {
+  color: #6d31cd;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.confirmacion-pago p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.confirmacion-pago button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  background: #43a8f0;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.confirmacion-pago button:hover {
+  background: #6d31cd;
+}
+  </style>
+</head>
+
+<body>
+  <div class="inicio">
+    <div class="perfil">
+      <a href="perfil.html">Perfil</a>
+    </div>
+
+    <nav class="naveg">
+      <a href="index.html">Inicio</a>
+      <a href="Cuentas.html">Cuentas  <br>Bancarias</a>
+      <a href="Nosotros.html">Sobre <br>Nosotros</a>
+      <a href="Login.html"> Cerrar<br>Sesion</a>
+    </nav>
+  </div>
+
+  <div class="formulario">
+    <div class="contenedor">
+      <h1>Pagos en Línea</h1>
+      <form id="paymentForm">
+        <div class="input-contenedor">
+          <i class="icon">Número de tarjeta:</i>
+          <input type="text" id="accountNumber" minlength="10" maxlength="10" required>
+        </div>
+        <div class="input-contenedor">
+          <i class="icon">Fecha de expedicion:</i>
+          <select id="mesExpedicion" required>
+            <option value="">Mes</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <select id="anoExpedicion" required>
+            <option value="">Año</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+          </select>
+        </div>
+        <div class="input-contenedor">
+          <i class="icon">CVC:</i>
+          <input type="text" id="cvc" minlength="3" maxlength="3" pattern="[0-9]{3}" required>
+        </div>
+        <button type="submit" class="button">Realizar Pago</button>
+      </form>
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <div class="resumen-pago" id="resumenPago">
+    <h2>Resumen del Pago</h2>
+    <p><strong>Número de cuenta:</strong> <span id="resumenCuenta"></span></p>
+    <p><strong>Propietario:</strong> Nombre Aleatorio</p>
+    <p><strong>Dinero disponible:</strong> $<span id="resumenCantidad"></span></p>
+    <br>
+    <h2>Elige el servicio a pagar:</h2>
+    <p>
+      <button onclick="redireccionar('Agua potable', 10)">Agua potable - $10</button>
+      <button onclick="redireccionar('Luz', 15)">Luz - $15</button>
+      <button onclick="redireccionar('Internet', 18)">Internet - $18</button>
+    </p>
+  </div>
+
+  <div class="confirmacion-pago" id="confirmacionPago">
+    <h2>Confirmar Compra</h2>
+    <p>¿Estás seguro de que deseas realizar esta compra?</p>
+    <button onclick="compraRealizada()">Confirmar</button>
+    <button onclick="cancelarCompra()">Cancelar</button>
+  </div>
+
+  <script>
+    document.getElementById('paymentForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const accountNumber = document.getElementById('accountNumber').value;
+      const mesExpedicion = document.getElementById('mesExpedicion').value;
+      const anoExpedicion = document.getElementById('anoExpedicion').value;
+      const cvc = document.getElementById('cvc').value;
+
+      if (!/^\d{10}$/.test(accountNumber)) {
+        alert('El número de cuenta debe contener exactamente 10 números.');
+        return;
+      }
+
+      if (mesExpedicion === '' || anoExpedicion === '') {
+        alert('Por favor, seleccione el mes y año de expedición.');
+        return;
+      }
+
+      if (!/^\d{3}$/.test(cvc)) {
+        alert('El código CVC debe contener exactamente 3 números.');
+        return;
+      }
+
+      
+
+      const resumenCantidad = Math.floor(Math.random() * 75) + 26;
+
+      document.getElementById('resumenCuenta').textContent = accountNumber;
+      document.getElementById('resumenCantidad').textContent = resumenCantidad;
+
+      document.getElementById('resumenPago').style.display = 'block';
+    });
+
+
+    function redireccionar(servicio, costo) {
+      document.getElementById('confirmacionPago').style.display = 'block';
+      document.getElementById('confirmacionPago').setAttribute('data-servicio', servicio);
+      document.getElementById('confirmacionPago').setAttribute('data-costo', costo);
+    }
+
+    function compraRealizada() {
+      const servicio = document.getElementById('confirmacionPago').getAttribute('data-servicio');
+      const costo = parseInt(document.getElementById('confirmacionPago').getAttribute('data-costo'));
+      const resumenCantidad = parseInt(document.getElementById('resumenCantidad').textContent);
+      const saldoActual = resumenCantidad - costo;
+      const mensaje = `Compra de ${servicio} realizada correctamente.\nSaldo actual: $${saldoActual} USD.`;
+
+      const mensajeConfirmacion = document.createElement('p');
+      mensajeConfirmacion.textContent = mensaje;
+      document.getElementById('confirmacionPago').appendChild(mensajeConfirmacion);
+    }
+
+    function cancelarCompra() {
+      document.getElementById('confirmacionPago').style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>

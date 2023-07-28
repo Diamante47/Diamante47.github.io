@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pago</title>
+    <style>
+        /* Estilos del menú de navegación */
+        .inicio {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 63px;
+            background: #171717;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .naveg {
+            display: flex;
+            margin-right: 10px;
+        }
+
+        .perfil {
+            margin-left: 30px;
+        }
+
+        .perfil a {
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        .naveg a {
+            display: block;
+            padding: 20px 20px;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        .naveg a:hover {
+            background: #3f3f3f;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #43a8f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: #6d31cd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+
+        .payment-method {
+            cursor: pointer;
+            padding: 15px 30px;
+            background-color: #43a8f0;
+            color: #fff;
+            font-size: 24px;
+            border-radius: 8px;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .payment-method:hover {
+            background-color: silver;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inicio">
+        <div class="perfil">
+            <a href="perfil.html">Perfil</a>
+        </div>
+
+        <nav class="naveg">
+            <a href="index.html">Inicio</a>
+            <a href="Cuentas.html">Cuentas<br>Bancarias</a>
+            <a href="Nosotros.html">Sobre<br>Nosotros</a>
+            <a href="Login.html">Cerrar<br>Sesion</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>Formulario de Pago</h1>
+        <div class="payment-methods">
+            <a class="payment-method" href="pagoscu.html">Pagar con Cuenta Bancaria</a>
+            <a class="payment-method" href="pagosta.html">Pagar con Tarjeta de Crédito</a>
+        </div>
+    </div>
+</body>
+
+</html>
+

@@ -1,0 +1,372 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: url(img/morado.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.contenedor {
+    width: 100%;
+    padding: 15px;
+}
+
+.formulario {
+    background: #fff;
+    margin-top: -100px;
+    padding: 3px;
+}
+
+h1 {
+    text-align: center;
+    color: #6d31cd;
+    font-size: 40px;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+
+.input-contenedor {
+    margin-bottom: 15px;
+    border: 1px solid;
+}
+
+.icon {
+    min-width: 50px;
+    text-align: center;
+    color: #6d31cd;
+}
+
+.button {
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #43a8f0;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #6d31cd;
+}
+
+p {
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: #43a8f0;
+    font-weight: 600;
+}
+
+.link:hover {
+    color: cadetblue;
+}
+
+@media(min-width:768px) {
+    .formulario {
+        margin: auto;
+        width: 500px;
+        margin-top: 100px;
+        border-radius: 2%;
+    }
+}
+
+.servicios {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.servicios h2 {
+    color: #6d31cd;
+}
+
+.servicios ul {
+    list-style: none;
+    padding: 0;
+}
+
+.servicios li {
+    margin-bottom: 10px;
+}
+
+.servicios li a {
+    text-decoration: none;
+    color: #6d31cd;
+    font-weight: bold;
+}
+
+.servicios li a:hover {
+    color: #43a8f0;
+}
+
+.noticias {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.noticias h2 {
+    color: #6d31cd;
+}
+
+.noticia {
+    margin-bottom: 10px;
+}
+
+.contacto {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.contacto h2 {
+    color: #6d31cd;
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+.footer {
+    background-color: #6d31cd;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.inicio {
+display: flex;
+align-items: center;
+justify-content: space-between;
+height: 63px;
+background: #171717;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 100;
+}
+
+.naveg {
+display: flex;
+margin-right: 10px;
+}
+
+.perfil {
+margin-left: 30px;
+}
+
+.perfil a {
+text-decoration: none;
+color: #fff;
+text-transform: uppercase;
+font-size: 20px;
+}
+
+.naveg a {
+display: block;
+padding: 20px 20px;
+color: #fff;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 20px;
+}
+
+.naveg a:hover {
+background: #3f3f3f;
+}
+
+
+
+.title {
+margin-bottom: 40px;
+font-size: 60px;
+font-weight: 600;
+text-transform: uppercase;
+color: #fff;
+}
+
+p {
+margin-bottom: 40px;
+font-size: 18px;
+color: #6d31cd;
+padding: 0 100px;
+}
+
+.btn {
+display: inline-block;
+margin-top: 15px;
+padding: 10px 40px;
+border: 2px solid #9c27b0;
+color: #fff;
+text-decoration: none;
+background: #9c27b0;
+}
+
+.btn:hover {
+background: none;
+}
+
+.btn-home {
+display: flex;
+}
+
+.btn-home a {
+margin: 0 10px;
+}
+
+.content {
+height: 50vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.sau {
+padding: 30px;
+background: silver;
+}
+
+.box-container {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+text-align: center;
+}
+
+.box-container .box {
+height: 11rem;
+width: 17rem;
+background: #101010;
+text-align: center;
+border-radius: 1rem;
+box-shadow: 0 .3rem 5rem rgba(0, 0 , 0, .5);
+margin: 2rem;
+}
+
+.box-container .box i {
+height: 3rem;
+width: 3rem;
+line-height: 3rem;
+text-align: center;
+border-radius: 50%;
+color: #fff;
+background: #9c27b0;
+font-size: 2rem;
+margin: 1rem 0;
+}
+
+.box-container .box h3 {
+font-size: 20px;
+color: #9c27b0;
+}
+
+.box-container .box p {
+padding: 0 15px;
+font-size: 16px;
+}
+
+.about {
+background: purple;
+}
+
+.price {
+background: url(img/costos.jpg) no-repeat center;
+background-attachment: fixed;
+background-size: cover;
+}
+
+.contact {
+padding-top: 20px;
+background: #171717;
+padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+
+.title {
+margin-bottom: 0;
+font-size: 40px;
+}
+
+.sau {
+height: 100vh;
+}
+
+.naveg {
+display: none;
+}
+}
+.servicios {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: url(img/morado.jpg) no-repeat center;
+    text-align: center;
+    border: 2px solid #6d31cd;
+    border-radius: 10px;
+}
+
+.servicios h2 {
+    color: #6d31cd;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.servicios ul {
+    list-style: none;
+    padding: 0;
+}
+
+.servicios li {
+    margin-bottom: 10px;
+}
+
+.servicios li a {
+    text-decoration: none;
+    color: #6d31cd;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.servicios li a:hover {
+    color: #43a8f0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: linear-gradient(150deg, #43a8f0, #6d31cd);
+    background-size: cover;
+    background-attachment: fixed;
+}
+h2 {
+    color: #3f3f3f;
+}
+
+.title{
+    color: aqua;
+}
+
+.ti {
+    color: #21679a;
+}
